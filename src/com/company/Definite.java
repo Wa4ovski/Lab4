@@ -8,7 +8,7 @@ public class Definite extends Places{
         public Definite(String name){
             this.name = name;
         }
-        public Definite(){};
+     //   public Definite(){};
 
         @Override
         public String toString() {

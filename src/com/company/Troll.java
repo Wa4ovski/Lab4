@@ -1,8 +1,9 @@
 package com.company;
 
 public class Troll extends Heroes implements Hider{
-    public Troll(String name){
+    public Troll(String name, Information.Game game){
        super(name);
+       game.IncrementHiders();
     }
 
    // public Definite currentPlace = new Definite();
@@ -28,8 +29,9 @@ public class Troll extends Heroes implements Hider{
         System.out.println(name+" is hiding "+somewhere);
         currentPlace = somewhere;
     }
-
-    @Override
+    public void giggle(){
+        System.out.println(name+"is giggling quietly");
+    }
     public void worry() {
         System.out.println(name+" is thinking that he choosed bad place");
     }

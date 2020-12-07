@@ -5,8 +5,11 @@ public abstract class Heroes {
     public Heroes(String name){
         this.name = name;
     }
+   // public Heroes(){ }
     Definite currentPlace;
-    abstract Definite getPlace();
+    Definite getPlace(){
+        return currentPlace;
+    }
     abstract void go(Definite somewhere);
     abstract void look(Space somewhere);
     abstract void turn();

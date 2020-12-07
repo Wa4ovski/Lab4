@@ -1,8 +1,9 @@
 package com.company;
 
 public class Sniff extends Heroes implements Searcher{
-    public Sniff(String name){
+    public Sniff(String name, Information.Game game){
         super(name);
+        game.IncrementSearchers();
     }
 
    // public Definite currentPlace = new Definite();
@@ -33,8 +34,15 @@ public class Sniff extends Heroes implements Searcher{
         go(somewhere);
         look(somewhere);
         if(getPlace().equals(somebody.getPlace())){
-            System.out.println(name+" has found the "+somebody.name+". Game over!");
-            System.exit(0);
+            System.out.println(name+" has found the "+somebody.name);
+        }
+    }
+    public void search(Definite somewhere, Heroes somebody, Information.Game game) {
+        go(somewhere);
+        look(somewhere);
+        if(getPlace().equals(somebody.getPlace())){
+            System.out.println(name+" has found the "+somebody.name);
+            game.DecrementHiders();
         }
     }
     public void search(Places.Indeterminate somewhere, Heroes somebody) {
